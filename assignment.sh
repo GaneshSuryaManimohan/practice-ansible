@@ -1,9 +1,9 @@
 #!/bin/bash
 
 FILE=$1
-WORD_COUNT=$(wc -w $FILE)
-LINE_COUNT=$(wc -l $FILE)
-CHAR_COUNT=$(wc -c $FILE)
+WORD_COUNT=$(wc -w $FILE |cut -d " " -f1)
+LINE_COUNT=$(wc -l $FILE |cut -d " " -f1)
+CHAR_COUNT=$(wc -c $FILE |cut -d " " -f1)
 EACH_WORD=$(tr -cs '[:alnum:]' '[\n*]' < $FILE | sort | uniq -c | sort -nr | head -n 5)
 echo "Word count in file $FILE is:: $WORD_COUNT"
 echo "Line count in file $FILE is:: $LINE_COUNT"
