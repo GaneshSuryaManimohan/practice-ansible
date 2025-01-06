@@ -8,3 +8,5 @@ then
     MSG+="CPU Usage is more than the threshold $CPU_THRESHOLD, current usage: $CPU_USAGE"
 fi
 echo -e "Message: $MSG"
+
+echo "$MSG" | mail -s "CPU Usage Alert" surya.manimohan@gmail.com
