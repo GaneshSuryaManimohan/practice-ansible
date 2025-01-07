@@ -13,4 +13,5 @@
     - name: Printing Play Level Variables
       ansible.builtin.debug:
         msg: "Hi I'm Surya, firstname is {{first_name}}, middle name is {{middle_name}}, last name is {{last_name}}"
-    
+
+#note: task level variables are give priority over the play level variables
