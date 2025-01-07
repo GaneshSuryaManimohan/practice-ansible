@@ -1,0 +1,16 @@
+- name: checking variable priorities
+  hosts: localhost
+  vars:
+    wishes: "Luck from play level vars"
+  vars_files:
+  - vars.yml
+  vars_prompt:
+  - name: wishes
+    prompt: please enter wishes
+    private: false
+  tasks:
+    - name: Printing Variables
+      ansible.builtin.debug:
+      vars:
+        wishes: "Luck from task level vars"
+        msg: "Hi I'm Surya, Good {{wishes}}"
