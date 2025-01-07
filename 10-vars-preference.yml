@@ -16,8 +16,8 @@
         msg: "Hi I'm Surya, Good {{wishes}}"
 
 # 1st Priority Args
-# 2nd Task Level
+# 2nd Task Level vars
 # 3rd Vars files
-# 4th Vars prompt
+# 4th Prompt vars
 # 5th Play level vars
-# 6th 
+# 6th Inventory file vars
