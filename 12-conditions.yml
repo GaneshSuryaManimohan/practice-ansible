@@ -4,7 +4,11 @@
   tasks:
     - name: check user exists or not
       ansible.builtin.command: id expense
+      ignore_errors: true
 
     - name: proceeding for next task
       ansible.builtin.debug:
         msg: "Proceeding Success"
+
+# In this case, if the first task conditions fails it won't proceed to next task
+# so, we gave ignore_errors: true so that the next step will proceed.
