@@ -1,0 +1,6 @@
+- name: Call variables from File
+  hosts: localhost
+  tasks:
+    - name: calling variables
+      ansible.builtin.debug:
+        msg: "Hi I'm Surya, firstname is {{first_name}}, middle name is {{middle_name}}, last name is {{last_name}}, age is {{age}}, DOB is {{DOB}}"
