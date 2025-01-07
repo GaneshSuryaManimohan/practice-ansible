@@ -5,11 +5,12 @@
     middle_name: "Manimohan"
     last_name: "Thuttagunta"
   tasks:
-    - name: Printing Play Level Variables
-      ansible.builtin.debug:
-        msg: "Hi I'm Surya, firstname is {{first_name}}, middle name is {{middle_name}}, last name is {{last_name}}"
     - name: printing task level variables
       vars:
         last_name: "T"
       ansible.builtin.debug:
         msg: "Hi I'm Surya, firstname is {{first_name}}, middle name is {{middle_name}}, last name is {{last_name}}"
+    - name: Printing Play Level Variables
+      ansible.builtin.debug:
+        msg: "Hi I'm Surya, firstname is {{first_name}}, middle name is {{middle_name}}, last name is {{last_name}}"
+    
