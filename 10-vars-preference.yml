@@ -10,7 +10,7 @@
     private: false
   tasks:
     - name: Printing Variables
-      ansible.builtin.debug:
       vars:
         wishes: "Luck from task level vars"
+      ansible.builtin.debug:
         msg: "Hi I'm Surya, Good {{wishes}}"
