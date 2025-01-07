@@ -1,6 +1,6 @@
 - name: Variables
   hosts: localhost
-  vars:
+  vars: #this is how we declare variables
     first_name: "Ganesh"
     middle_name: "Surya Manimohan"
     last_name: "Thuttagunta"
