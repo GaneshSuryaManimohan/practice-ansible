@@ -11,9 +11,15 @@
       ansible.builtin.debug:
         msg: "User info is: {{USER}}"
 
+    - name: create user
+      ansible.builtin.command: useradd expense
+      when: USER.rc != 0
+
+
     - name: proceeding for next task
       ansible.builtin.debug:
         msg: "Proceeding Success"
 
 # In this case, if the first task conditions fails it won't proceed to next task
 # so, we gave ignore_errors: true so that the next step will proceed.
+# register command will store the previous commands output
