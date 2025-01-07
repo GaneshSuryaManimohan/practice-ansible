@@ -10,6 +10,6 @@
         msg: "Hi I'm Surya, firstname is {{first_name}}, middle name is {{middle_name}}, last name is {{last_name}}"
     - name: printing task level variables
       vars:
-        last_name: "Thuttagunta"
+        last_name: "T"
       ansible.builtin.debug:
         msg: "Hi I'm Surya, firstname is {{first_name}}, middle name is {{middle_name}}, last name is {{last_name}}"
