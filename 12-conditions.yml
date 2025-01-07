@@ -1,0 +1,10 @@
+- name: conditions
+  hosts: web
+  become: yes
+  tasks:
+    - name: check user exists or not
+      ansible.builtin.command: id expense
+
+    - name: proceeding for next task
+      ansible.builtin.debug:
+        msg: "Proceeding Success"
