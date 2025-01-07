@@ -2,9 +2,8 @@
   hosts: localhost
   tasks:
     - name: Play-1 & Task 1
-      ansible.builtin.dnf:
-        name: ansible
-        state: present
+      ansible.builtin.debug:
+        msg: "This is Play-1 and Task-1"
 - name: Play-2
   hosts: localhost
   tasks:
