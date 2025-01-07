@@ -23,3 +23,4 @@
 # In this case, if the first task conditions fails it won't proceed to next task
 # so, we gave ignore_errors: true so that the next step will proceed.
 # register command will store the previous commands output
+# when condition will check if the rc (its like exit code in shell scripting) is equal to 0 or not, if its not then user will be created else it will ignore user creation
