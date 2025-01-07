@@ -1,5 +1,7 @@
 - name: Call variables from File
   hosts: localhost
+  vars_files:
+  - vars.yml
   tasks:
     - name: calling variables
       ansible.builtin.debug:
