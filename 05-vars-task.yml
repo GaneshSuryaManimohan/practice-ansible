@@ -2,7 +2,7 @@
   hosts: localhost
   vars: #this is how we declare variables
     first_name: "Ganesh"
-    middle_name: "Surya Manimohan"
+    middle_name: "Manimohan"
     last_name: "Thuttagunta"
   tasks:
     - name: Printing Play Level Variables
