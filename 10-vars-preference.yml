@@ -4,10 +4,10 @@
     wishes: "Luck from play level vars"
   vars_files:
   - vars.yml
-  vars_prompt:
-  - name: wishes
-    prompt: please enter wishes
-    private: false
+  # vars_prompt:
+  # - name: wishes
+  #   prompt: please enter wishes
+  #   private: false
   tasks:
     - name: Printing Variables
       # vars:
@@ -17,4 +17,6 @@
 
 # 1st Priority Args
 # 2nd Task Level
-#
+# 3rd Vars files
+# 4th Vars prompt
+# 5ht
