@@ -1,0 +1,15 @@
+- name: data type
+  hosts: localhost
+  vars:
+    name: Ganesh Surya Manimohan
+    Address:
+    - Door:4-9/1
+    - Veerabrahmam Temple Lane
+    - Korumamidi
+    Family:
+      members: 5
+    Married: false
+  tasks:
+    - name: print variables
+      ansible.builtin.debug:
+        msg: "Name is: {{name}}, Address is: {{Address}}, Total Family Members: {{Family}}, Is Married?: {{Married}}"
