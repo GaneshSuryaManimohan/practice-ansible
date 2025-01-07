@@ -1,7 +1,7 @@
 - name: checking variable priorities
   hosts: localhost
-  vars:
-    wishes: "Luck from play level vars"
+  # vars:
+  #   wishes: "Luck from play level vars"
   vars_files:
   - vars.yml
   # vars_prompt:
@@ -19,4 +19,5 @@
 # 2nd Task Level
 # 3rd Vars files
 # 4th Vars prompt
-# 5ht
+# 5th Play level vars
+# 6th 
