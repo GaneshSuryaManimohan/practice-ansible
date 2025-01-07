@@ -4,3 +4,20 @@
     - name: Printing Variables From Args
       ansible.builtin.debug:
         msg: "Hi I'm Surya, firstname is {{first_name}}, middle name is {{middle_name}}, last name is {{last_name}}, age is: {{age}}"
+
+#O/P:
+# ansible-playbook -i inventory.ini -e ansible_user=ec2-user -e ansible_password=DevOps321 09-vars-args.yml -e "first_name=Ganesh middle_name=Manimohan last_name=Thuttagunta age=29"
+# [WARNING]: Found both group and host with same name: localhost
+
+# PLAY [variables from arguments] ************************************************************************
+
+# TASK [Gathering Facts] *********************************************************************************
+# ok: [localhost]
+
+# TASK [Printing Variables From Args] ********************************************************************
+# ok: [localhost] => {
+#     "msg": "Hi I'm Surya, firstname is Ganesh, middle name is Manimohan, last name is Thuttagunta, age is: 29"
+# }
+
+# PLAY RECAP *********************************************************************************************
+# localhost                  : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
