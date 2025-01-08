@@ -8,5 +8,5 @@
         state: "{{item.state}}"
       loop:
       - {name: 'nginx', state: 'latest'}
-      - {name: 'fail2ban', state: 'absent'}
+      - {name: 'fail2ban', state: 'latest'}
       - {name: 'lighttpd', state: 'absent'}
