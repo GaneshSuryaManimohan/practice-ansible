@@ -3,4 +3,17 @@
   tasks:
     - name: set default value
       ansible.builtin.debug:
-        msg: "Hello {{name | default('Surya') }} "
+        msg: "Hello {{name | default('Surya') }}"
+
+#here name variable is not declared, but we set its default value as Surya
+
+- name: lower to upper
+  hosts: localhost
+  vars:
+    wishes: "happy new year 2025"
+  tasks:
+    - name: convert to upper
+      ansible.builtin.debug:
+        msg: "{{wishes | upper}}"
+
+  
