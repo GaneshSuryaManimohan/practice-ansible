@@ -1,0 +1,12 @@
+- name: install packages
+  hosts: web
+  become: true
+  tasks:
+    - name: installing the packages
+      ansible.builtin.dnf:
+        name: "{{item}}"
+        state: latest
+      loop:
+      - {name: 'nginx', state: 'latest'}
+      - {name: 'fail2ban', state: 'absent'}
+      - {name: 'lighttpd', state: 'absent'}
