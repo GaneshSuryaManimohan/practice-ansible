@@ -8,3 +8,15 @@
       - ganesh
       - surya
       - manimohan
+
+- name: install packages
+  hosts: web
+  tasks:
+    - name: installing the packages
+      ansible.builtin.dnf:
+        name: "{{item}}"
+        state: present
+      loop:
+      - nginx
+      - fail2ban
+      - lighttpd
