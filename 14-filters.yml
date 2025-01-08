@@ -27,8 +27,7 @@
 
 - name: find unique values
   hosts: localhost
-  vars:
-    numbers: [1,2,3,4,5,6,6,6,7,5,7,8,9,9,1,2]
+  numbers: [1,2,3,4,5,6,6,6,7,5,7,8,9,9,1,2]
   tasks:
-    ansible.builtin.debug:
-      msg: "{{numbers | unique}}"
+      ansible.builtin.debug:
+        msg: "{{numbers | unique}}"
