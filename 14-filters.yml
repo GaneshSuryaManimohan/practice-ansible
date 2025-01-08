@@ -1,0 +1,6 @@
+- name: default value
+  hosts: localhost
+  tasks:
+    - name: set default value
+      ansible.builtin.debug:
+        msg: "Hello {{name}} | default('Surya')"
