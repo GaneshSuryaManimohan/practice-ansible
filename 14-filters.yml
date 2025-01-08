@@ -16,4 +16,11 @@
       ansible.builtin.debug:
         msg: "{{wishes | upper}}"
 
-  
+- name: upper to lower
+  hosts: localhost
+  vars:
+    wishes: "HAPPY NEW YEAR 2025"
+  tasks:
+    - name: convert to lower
+      ansible.builtin.debug:
+        msg: "{{wishes | lower}}"
