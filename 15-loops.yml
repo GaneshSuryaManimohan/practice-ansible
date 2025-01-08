@@ -11,6 +11,7 @@
 
 - name: install packages
   hosts: web
+  become: true
   tasks:
     - name: installing the packages
       ansible.builtin.dnf:
