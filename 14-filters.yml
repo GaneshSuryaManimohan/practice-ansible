@@ -24,3 +24,10 @@
     - name: convert to lower
       ansible.builtin.debug:
         msg: "{{wishes | lower}}"
+
+- name: find unique values
+  hosts: localhost
+  numbers: [1,2,3,4,5,6,6,6,7,5,7,8,9,9,1,2]
+  tasks:
+    ansible.builtin.debug:
+      msg: "{{numbers | unique}}"
