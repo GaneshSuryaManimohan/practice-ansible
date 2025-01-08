@@ -40,3 +40,16 @@
   tasks:
     - ansible.builtin.debug:
         msg: "Minimum age: {{age | min}}, Maximum age: {{age | max}}"
+
+- name: convert dictionary to list/items
+  hosts: localhost
+  vars:
+    my_data:
+      name: ganesh
+      age: 29yrs
+      gender: Male
+  tasks:
+    - ansible.builtin.debug:
+        msg: "before converting: {{my_data}}"
+    - ansible.builtin.debug:
+        msg: "after converting: {{my_data | dict2items }}"
