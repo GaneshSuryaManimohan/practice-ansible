@@ -1,17 +1,13 @@
 - name: Configure Mysql-Server
   hosts: db
   vars:
-    host: db.surya-devops.online
-  vars_prompt:
-  - name: password
-    prompt: please enter root password
-    private: true
+    login_host: db.surya-devops.online
   become: true
   tasks:
     - name: Installing Mysql-Server
       ansible.builtin.dnf:
         name: mysql-server
-        state: absent
+        state: latest
     - name: Start and Enable Mysql Service
       ansible.builtin.service:
         name: mysqld
@@ -22,10 +18,11 @@
     - name: check DB connection
       community.mysql.mysql_info:
         login_user: root
-        login_password: "{{password}}"
-        login_host: "{{host}}"
+        login_password: ExpenseApp@1
+        login_host: "{{login_host}}"
         filter: version
-        register: mysql_output
+      ignore_errors: true
+      register: mysql_output
     - name: print output
       ansible.builtin.debug:
         msg: "Output: {{mysql_output}}"
