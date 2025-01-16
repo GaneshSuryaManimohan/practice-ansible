@@ -1,0 +1,20 @@
+- name: setting up backend
+  hosts: backend
+  become: true
+  vars:
+
+  tasks:
+    - name: Disable default nodeJS
+      ansible.builtin.command: dnf module disable nodejs -y
+
+    - name: Enable nodeJS:20
+      ansible.builtin.command: dnf module enable nodejs:20 -y
+
+    - name: Install nodejs
+      ansible.builtin.dnf:
+        name: nodejs
+        state: latest
+
+    - name: adding user 
+      ansible.builtin.user:
+        name: expense
