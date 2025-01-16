@@ -33,3 +33,4 @@
       ansible.builtin.unarchive:
         src: /tmp/backend.zip
         dest: /app
+        remote_src: true
