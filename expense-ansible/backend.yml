@@ -50,16 +50,17 @@
         src: /home/ec2-user/practice-ansible/expense-ansible/backend.service
         dest: /etc/systemd/system/backend.service
 
-- name: Install python mysql dependencies
-      ansible.builtin.pip:
-        name:
-        - PyMySQL
-        - cryptography
-        executable: pip3.9 #based on python version, if it is 3.11 then use pip3.11
-- name: Import data to mysql
-  community.mysql.mysql_db:
-    login_user: root
-    login_password: "{{mysql_root_password}}"
-    login_host: "{{login_host}}"
-    target: /app/schema/backend.sql
-    state: import
+    - name: Install python mysql dependencies
+        ansible.builtin.pip:
+          name:
+          - PyMySQL
+          - cryptography
+          executable: pip3.9 #based on python version, if it is 3.11 then use pip3.11
+
+    - name: Import data to mysql
+        community.mysql.mysql_db:
+          login_user: root
+          login_password: "{{mysql_root_password}}"
+          login_host: "{{login_host}}"
+          target: /app/schema/backend.sql
+          state: import
