@@ -2,6 +2,10 @@
   hosts: db
   vars:
     login_host: db.surya-devops.online
+  vars_prompt:
+  - name: mysql_root_password
+    prompt: please enter root password
+    private: true
   become: true
   tasks:
     - name: Installing Mysql-Server
@@ -25,7 +29,7 @@
     - name: check DB connection
       community.mysql.mysql_info:
         login_user: root
-        login_password: ExpenseApp@1
+        login_password: "{{ mysql_root_password }}"
         login_host: "{{login_host}}"
         filter: version
       ignore_errors: true
@@ -37,4 +41,7 @@
     #   ansible.builtin.command: mysql_secure_installation --set-root-pass {{password}}
     #   when: mysql_output.rc != 0
       
+    - name: setup root password
+      ansible.builtin.command: "mysql_secure_installation --set-root-pass {{mysql_root_password}}"
+      when: mysql_output.failed is true
 
