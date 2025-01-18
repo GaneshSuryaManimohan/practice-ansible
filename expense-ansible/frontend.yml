@@ -1,7 +1,6 @@
 - name: setting up frontend
   hosts: surya-devops.online
-  vars:
-
+  become: true
   tasks:
     - name: Install Nginx
       ansible.builtin.dnf:
