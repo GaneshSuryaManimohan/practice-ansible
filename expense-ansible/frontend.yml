@@ -1,0 +1,39 @@
+- name: setting up frontend
+  hosts: surya-devops.online
+  vars:
+
+  tasks:
+    - name: Install Nginx
+      ansible.builtin.dnf:
+        name: nginx 
+        state: latest
+
+    - name: start and enable nginx
+      ansible.builtin.service:
+        name: nginx
+        state: started
+        enabled: true
+    
+    - name: remove default content on nginx webserver
+      ansible.builtin.command: rm -rf /usr/share/nginx/html/*
+
+    - name: download frontend content
+      ansible.builtin.get_url:
+        url: https://expense-builds.s3.us-east-1.amazonaws.com/expense-frontend-v2.zip
+        dest: /tmp/frontend.zip
+
+    - name: Extracting the frontend content
+      ansible.builtin.unarchive:
+        src: /tmp/frontend.zip
+        dest: /usr/share/nginx/html
+        remote_src: yes
+    
+    - name: copy expense.conf
+      ansible.builtin.copy:
+        src: expense.conf
+        dest: /etc/nginx/default.d/expense.conf
+
+    - name: restart nginx
+      ansible.builtin.service:
+        name: nginx
+        state: restarted
