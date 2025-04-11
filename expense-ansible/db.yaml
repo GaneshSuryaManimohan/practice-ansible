@@ -1,7 +1,7 @@
 - name: Configure Mysql-Server
   hosts: db
   vars:
-    login_host: db.surya-devops.online
+    login_host: db.surya-devops.site
   vars_prompt:
   - name: mysql_root_password
     prompt: please enter root password

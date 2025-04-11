@@ -1,5 +1,5 @@
 - name: setting up frontend
-  hosts: surya-devops.online
+  hosts: surya-devops.site
   become: true
   tasks:
     - name: Install Nginx
